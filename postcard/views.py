@@ -21,5 +21,6 @@ def postcard() -> str:
         user_agent=request.user_agent,
         date=today(),
         ip=request.access_route[0],
-        c=request.args
+        c=request.args,
+        geo=getCity(request.access_route[0])
     )
