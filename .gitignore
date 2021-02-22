@@ -128,5 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# 待整理
-postcard/素材/
+.vscode/

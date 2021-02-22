@@ -1,5 +1,6 @@
-from flask import render_template, request, url_for, redirect, flash
+from flask import render_template, request, url_for, redirect, abort
 from postcard import app
+from .functions import *
 
 @app.route('/')
 def index() -> str:
@@ -15,4 +16,10 @@ def contact() -> str:
 
 @app.route('/postcard.svg')
 def postcard() -> str:
-    pass
+    return render_template(
+        "postcard.svg",
+        user_agent=request.user_agent,
+        date=today(),
+        ip=request.access_route[0],
+        c=request.args
+    )

@@ -9,4 +9,5 @@
 - GeoIP
 
 ## 贡献
-- [@Xecades](/xecades) 作图
+- [@Xecades](/Xecades) 作图
+- 前辈 [@hanlin-studio](/hanlin-studio) 的原型
