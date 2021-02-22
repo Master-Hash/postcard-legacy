@@ -5,9 +5,12 @@
 
 ## 组件
 - Flask
-- UA
 - GeoIP
 
+UA 由 Flask 自动处理。
+
 ## 贡献
-- [@Xecades](/Xecades) 作图
-- 前辈 [@hanlin-studio](/hanlin-studio) 的原型
+- [@Xecades](https://github.com/Xecades) 作图
+
+## 致谢
+- 前辈 [@hanlin-studio](https://github.com/hanlin-studio) 的[原型](https://github.com/hanlin-studio/IP)
