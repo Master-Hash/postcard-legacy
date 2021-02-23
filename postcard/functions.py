@@ -1,6 +1,10 @@
-import locale, datetime, geoip2.database
+import locale, datetime, geoip2.database, os
 # from .settings import *
-locale.setlocale(locale.LC_ALL, "zh_cn")
+
+if os.name == "nt":
+    locale.setlocale(locale.LC_ALL, "zh_cn")
+else:
+    locale.setlocale(locale.LC_ALL, "zh_CN.UTF-8")
 
 def today() -> str:
     a = datetime.date.today()
@@ -13,5 +17,3 @@ def getCity(ip: str) -> str:
     with geoip2.database.Reader("GeoLite2-City.mmdb") as reader:
 	    response = reader.city(ip)
     return response.city.names['zh-CN']
-
-def fastsvg(): ...
