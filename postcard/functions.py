@@ -13,3 +13,5 @@ def getCity(ip: str) -> str:
     with geoip2.database.Reader("GeoLite2-City.mmdb") as reader:
 	    response = reader.city(ip)
     return response.city.names['zh-CN']
+
+def fastsvg(): ...

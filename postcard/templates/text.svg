@@ -1,0 +1,8 @@
+<g id="Text">
+    <text class="cls-1" transform="translate(20 35.32)">欢迎您来自{{ geo }}的朋友</text>
+    <text class="cls-1" transform="translate(20 65.32)">今天是 {{ date }}</text>
+    <text class="cls-1" transform="translate(20 95.32)">您的 IP 是 {{ ip }}</text>
+    <text class="cls-1" transform="translate(20 125.32)">您使用的是 {{ user_agent.platform | capitalize }} 操作系统</text>
+    <text class="cls-1" transform="translate(20 155.32)">您使用的是 {{ user_agent.browser | capitalize }} ({{ user_agent.version }}) 浏览器</text>
+    <line class="cls-2" x1="247" y1="22" x2="247" y2="168"/>
+</g>
