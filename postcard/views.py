@@ -1,11 +1,11 @@
-from flask import render_template, request, url_for, redirect, abort, make_response
+from flask import render_template, request, redirect, abort, make_response
 from flask.wrappers import Response
 from postcard import app
 from .functions import *
 
 @app.route('/')
-def index() -> str:
-    return render_template("index.html")
+def index():
+    return redirect("https://github.com/Master-Hash/postcard", 301)
 
 # 就现在的优化而言，不推荐使用前两个，
 # 毕竟只是简单地挖掉了部分，

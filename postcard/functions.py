@@ -1,4 +1,5 @@
 import locale, datetime, geoip2.database, os
+import logging
 # from .settings import *
 
 if os.name == "nt":
@@ -16,4 +17,12 @@ def getCity(ip: str) -> str:
         return "本地"
     with geoip2.database.Reader("GeoLite2-City.mmdb") as reader:
 	    response = reader.city(ip)
-    return response.city.names['zh-CN']
+    if response.city.names:
+        return response.city.names['zh-CN']
+    elif response.country.names:
+        return response.country.names['zh-CN']
+    elif response.continent.names:
+        return response.continent.names['zh-CN']
+    else:
+        logging.warning(f"找不到 ip 位置：{ip}")
+        return "神秘位置" # 这里用什么好呢
