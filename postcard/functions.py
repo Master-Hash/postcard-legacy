@@ -1,4 +1,4 @@
-import locale, datetime, geoip2.database, os, logging, requests, aiofiles
+import locale, datetime, geoip2.database, os, logging, requests, aiofiles, time
 from base64 import b64encode
 from mimetypes import guess_type
 
@@ -17,7 +17,7 @@ else:
     locale.setlocale(locale.LC_ALL, "zh_CN.UTF-8")
 
 def today() -> str:
-    a = datetime.date.today()
+    a = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8)))
     return f"{a.year} 年 {a.month} 月 {a.day} 日 {a.strftime('%A')}"
 
 def getCity(ip: str) -> str:
