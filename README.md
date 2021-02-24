@@ -13,7 +13,7 @@
 $ flask routes
 Endpoint  Methods  Rule
 --------  -------  -----------------------
-api       GET      /postcard
+api       GET      /api
 egg       GET      /teapot
 index     GET      /
 static    GET      /static/<path:filename>
@@ -46,6 +46,18 @@ static    GET      /static/<path:filename>
 - `line2=<str>`
 
 上述所有参数均为可选，多余的参数会被忽略。
+
+## 错误码
+
+### 400
+当指定合法的 `img` 参数但未指定 `src` 参数时，会抛出此错误。
+
+### 5__
+服务器内部错误。如果你遇见了此类错误，请将你的请求 url 和 ip 通过邮件发给我。
+
+鉴于本人才入门，还没有更先进的部署和日志手段，麻烦各位了。
+
+<!-- 404，418 不解释。 -->
 
 ## 依赖及相关技术说明
 因为我没有使用各种虚拟环境的习惯，只好将依赖手动列出来。
