@@ -1,9 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 530 180">
+    {% if items or c.line or c.line2 %}
+        {% set width=500 %}
+    {% else %}
+        {% set width=320 %}
+    {% endif %}
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {{ width }} 180">
     <defs>
-        <style>.cls-1{font-size:11px;letter-spacing:0.02em;}.cls-1,.cls-3,.cls-9{font-weight:100;}.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:0.5px;}.cls-3{font-size:9.55px;letter-spacing:0.02em;}.cls-3,.cls-9{fill:#333;}.cls-4{fill:#fff;}.cls-5{fill:#efaa1c;}.cls-6{fill:#da2820;}.cls-7{fill:#040000;}.cls-8{fill:#1296db;}.cls-9{font-size:10px;letter-spacing:0.01em;}</style>
+        <style>{% include "style.css" %}</style>
     </defs>
-    <title>Dynamic Postcard</title>
+    <title>Postcard - Hash</title>
     {% block img     %}{% endblock img     %}
     {% block text    %}{% endblock text    %}
     {% block contact %}{% endblock contact %}

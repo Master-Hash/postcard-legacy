@@ -1,0 +1,53 @@
+/* https://zhih.me/website-darkmode-on-macos/ */
+
+:root {
+    --background-color: #FFF;
+    --content-color: #15171A;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #222;
+      --content-color: #dfdfdf;
+    }
+}
+
+svg {
+    background-color: var(--background-color);
+}
+
+#image .line {
+    fill: none;
+    stroke: #555;
+    stroke-miterlimit: 10;
+    stroke-width: 0.5px;
+    stroke-linecap: round;
+}
+
+#image .bg {
+    /* width: 200px; */
+    height: 250px;
+}
+
+#detail .text {
+    font-size: 12px;
+    font-weight: lighter;
+    fill: var(--content-color);
+}
+
+#contact .item .icon {
+    width: 16px;
+    height: 16px;
+}
+
+#contact .item .text {
+    font-size: 10px;
+    fill: var(--content-color);
+    font-weight: lighter;
+}
+
+#quote .text {
+    font-size: 10px;
+    fill: var(--content-color);
+    font-weight: lighter;
+}

@@ -25,20 +25,31 @@
     <text class="cls-3" transform="translate(368.16 111.38)">{{ username | e }}</text>
 {% endmacro %}
 
-{% macro internal_img(src) %}
-    <g id="Img">
-        <image width="166" height="303" transform="matrix(-0.43, 0, 0, 0.43, 319, 30)" href="{{ url_for('static', filename=src) }}"/>
-    </g>
-{% endmacro %}
-
 {% macro external_img(src) %}
     <g id="Img">
         <image width="166" height="303" transform="matrix(-0.43, 0, 0, 0.43, 319, 30)" href="{{ src | e }}"/>
     </g>
 {% endmacro %}
 
-{% macro quote(line="", line2="") %}
-    <g id="Quote">
-        <text class="cls-9" transform="translate(345.39 138.97)">{{ line | e }}<tspan x="0" y="16">{{ line2 | e }}</tspan></text>
+{# 以上的是废弃代码 #}
+
+{% macro render_item(text, alt, b64_data, offset_y) %}
+    <g class="item">
+        <image class="icon" transform="translate(350 {{ offset_y }})" href="{{ b64_data | e }}"/>
+        <text class="text" transform="translate(370 {{ offset_y + 12 }})">{{ text | e }}</text>
+    </g>
+{% endmacro %}
+
+{% macro render_img(b64_data, offset_x=0, offset_y=0, scale=0.5) %}
+    <g id="image">
+        <line class="line" x1="250.5" y1="20" x2="250.5" y2="170"/>
+        <image class="bg" transform="translate({{ offset_x | e }} {{ offset_y | e }}) scale({{ scale | e }})" href="{{ b64_data | e }}"/>
+    </g>
+{% endmacro %}
+
+{% macro render_quote(line="", line2="") %}
+    <g id="quote" transform="translate(8 15)">
+        <text class="text" transform="translate(350 135)">{{ line | e }}</text>
+        <text class="text" transform="translate(350 155)">{{ line2 | e }}</text>
     </g>
 {% endmacro %}

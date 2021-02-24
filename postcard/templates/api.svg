@@ -1,0 +1,31 @@
+{% extends "base.svg" %}
+{% from "macros.svg" import render_item, render_img, render_quote %}
+
+{% block img %}
+    {% if img %}
+        {{ render_img(data, c.offset_x, c.offset_y, c.scale) }}
+    {% endif %}
+{% endblock img %}
+
+{% block text %}
+    {% include 'text.svg' %}
+{% endblock text %}
+
+{% block contact %}
+    {% if items %}
+    {# 真就逐字翻译呗 #}
+    {% set margin=40 %}
+    {% set sp=(170-margin)/(items|length) %}
+    <g id="contact" transform="translate(0 -25)">
+        {% for item in items %}
+            {{ render_item(item.text, item.alt, item.b64_data, margin + sp * loop.index0 + sp / 2 - 16) }}
+        {% endfor %}
+    </g>
+    {% endif %}
+{% endblock contact %}
+
+{% block quote %}
+    {% if c.line or c.line2 %}
+        {{ render_quote(line=c.line, line2=c.line2) }}
+    {% endif %}
+{% endblock quote %}
