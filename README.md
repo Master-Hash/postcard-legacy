@@ -60,12 +60,13 @@ static    GET      /static/<path:filename>
 <!-- 404，418 不解释。 -->
 
 ## 依赖及相关技术说明
-因为我没有使用各种虚拟环境的习惯，只好将依赖手动列出来。
+因为推荐使用发行版包，并且发行版打包时非常讨厌
+lock，我没有使用各种虚拟环境的习惯。
 
-pip 中模块名如下：
-- flask
-- [geoip2](https://github.com/maxmind/GeoIP2-python)
-- aiofiles
+运行时模块列在 `requirements.txt`
+里，要求版本全部是不低于开发环境（也是发行版打包的规范）。
+
+开发模块则根据个人喜好。
 
 UA 由 Flask 自动处理。
 

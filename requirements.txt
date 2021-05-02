@@ -1,0 +1,10 @@
+aiofiles>=0.6.0
+fastapi>=0.63.0
+Flask>=1.1.2
+pydantic>=1.8.1
+requests>=2.24.0
+uvicorn>=0.13.4
+geoip2>=4.1.0
+aiohttp>=3.7.0.post0
+uWSGI>=2.0.19.1
+Jinja2>=2.11.3
